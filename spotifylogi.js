@@ -74,11 +74,11 @@ function Spotify(defPlayerId, name, cmd, address, port) {
     };
 
     this.addToPlaylist = function (itemURI, playerId, callback) {
-        this.request(playerId, ["spotifyplcmd", "cmd:add", "uri:" + itemURI], callback);
+        this.request(playerId, ["playlist", "add", itemURI], callback);
     };
 
     this.loadToPlaylist = function (itemURI, playerId, callback) {
-        this.request(playerId, ["spotifyplcmd", "cmd:load", "uri:" + itemURI], callback);
+        this.request(playerId, ["playlist", "load", itemURI], callback);
     };
 }
 
